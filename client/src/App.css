@@ -1,0 +1,11 @@
+/* Define color variables at the root */
+:root {
+    --primary-color: black; /* Primary color for primary buttons and border */
+    --text-color: black;      /* Variable for text color */
+    --background-body: black; /* Variable for background color of post bodies */
+    --border-radius: 4px;     /* Border radius for buttons */
+}
+
+.hoverable:hover {
+    cursor: pointer;
+}

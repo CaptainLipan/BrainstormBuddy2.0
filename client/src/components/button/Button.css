@@ -1,0 +1,58 @@
+/* General button styling */
+.button {
+    padding: 10px 30px;
+    border: 1px solid var(--primary-color);
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    font-size: 15px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover effect for all buttons to maintain cursor pointer and border color */
+.button:hover {
+    cursor: pointer;
+    border-color: var(--primary-color);
+}
+
+/* Specific styling for primary buttons */
+.primary-button {
+    background-color: var(--primary-color);
+    color: white;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover styles for primary buttons */
+.primary-button:hover {
+    background-color: white;
+    color: var(--text-color);
+    border-color: var(--primary-color);
+}
+
+/* Styling for secondary buttons */
+.secondary-button {
+    background-color: transparent;
+    color: var(--primary-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover styles for secondary buttons */
+.secondary-button:hover {
+    background-color: white;
+    color: black;
+    border-color: var(--primary-color);
+}
+
+/* Styling for the post areas */
+.posts-wrapper .post .post-body {
+    grid-area: post-body;
+    background-color: var(--background-body); /* Use variable for body background */
+    padding: 10px;
+    color: white; /* Ensuring text is visible on black background */
+}
+
+/* Styling for the post footer */
+.posts-wrapper .post .post-footer {
+    grid-area: post-footer;
+    background-color: #dcdcdc;
+    padding: 10px;
+}

@@ -1,0 +1,21 @@
+.actions {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+.actions div:nth-child(2) {
+    margin: 0px 10px;
+}
+.profile{
+
+    border: 1px solid transparent;
+    border-radius: var(--border-radius);
+}
+
+.profile:hover {
+    border: 1px solid lightgrey;
+}
+
+.profile svg {
+    margin-right: 8px;
+}

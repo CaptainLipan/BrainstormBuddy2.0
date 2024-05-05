@@ -1,0 +1,58 @@
+/* General layout for the filter container */
+.filter-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Maintains space between buttons */
+    margin-top: 20px; /* Added consistent top margin */
+}
+
+/* Styling for individual filter buttons */
+.filter-button {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc; /* Added subtle border for definition */
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 16px;
+    position: relative;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; /* Enhanced transitions */
+}
+
+/* Enhanced hover and active styles */
+.filter-button:hover, .filter-button.active {
+    background-color: var(--primary-color); /* Utilize CSS variable for primary color */
+    color: white;
+    border-color: var(--primary-color); /* Assuming use of a preprocessor for darkening */
+}
+
+/* Dropdown menu styling */
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: black;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    z-index: 1000;
+    color: white;
+    padding: 5px 0; /* Added padding for better dropdown item spacing */
+}
+
+/* Styling for dropdown items */
+.dropdown-item {
+    padding: 10px;
+    text-align: left;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transitions */
+}
+
+/* Hover effects for dropdown items */
+.dropdown-item:hover {
+    background-color: white;
+    color: black;
+}

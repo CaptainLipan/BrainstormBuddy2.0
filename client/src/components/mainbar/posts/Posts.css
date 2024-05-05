@@ -1,0 +1,136 @@
+    /* Main layout and styling for the post container */
+    .posts-wrapper .post {
+        display: grid;
+        width: 100%;
+        max-width: 800px;
+        grid-template-columns: 1fr 17fr;
+        grid-template-rows: 1fr auto 1fr;
+        grid-template-areas:
+            "post-sidebar post-title"
+            "post-sidebar post-body"
+            "post-sidebar post-footer";
+        margin: 10px auto;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    /* Styling for the sidebar, including flex layout for vertical alignment */
+    .posts-wrapper .post .post-sidebar {
+        grid-area: post-sidebar;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 10px;
+    }
+
+    /* Sub-element styling within the sidebar */
+    .posts-wrapper .post .post-sidebar > span {
+        margin: 10px 0;
+        font-size: 12px;
+        font-weight: 600;
+    }
+
+    /* Enhancing interaction with hover effects */
+    .posts-wrapper .post .post-sidebar > svg {
+        padding: 5px;
+        border-radius: 50%;
+        transition: background-color 0.2s, transform 0.3s;
+    }
+
+    .posts-wrapper .post .post-sidebar > .upvote:hover,
+    .posts-wrapper .post .post-sidebar > .downvote:hover {
+        cursor: pointer;
+        background-color: #f0f0f0;
+        color: green; /* Green for upvote, red for downvote */
+        transform: scale(1.1);
+    }
+
+    .posts-wrapper .post .post-sidebar > .downvote:hover {
+        color: red;
+    }
+
+    /* Styling for the title area of the post */
+    .posts-wrapper .post .post-title {
+        grid-area: post-title;
+        background-color: white;
+        display: flex;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .posts-wrapper .post .post-title > span,
+    .posts-wrapper .post .post-title .post-title-username,
+    .posts-wrapper .post .post-title .post-title-time {
+        margin-right: 10px;
+    }
+    .posts-wrapper .post .post-title .post-title-username {
+        cursor: pointer; /* Indicates that the username is interactive */
+    }
+
+    .posts-wrapper .post .post-title .post-title-username:hover {
+        text-decoration: underline; /* Adds underline on hover */
+    }
+
+
+    /* Button specific styling, ensuring it aligns to the right */
+    .posts-wrapper .post .post-title > .follow-button:last-child {
+        margin-left: auto;
+    }
+    /* Specific hover styling for the Follow button */
+    .posts-wrapper .post .post-title .follow-button:hover {
+        color: white;
+        background-color: black;
+    }
+    /*button styling*/
+    .posts-wrapper .post .post-title .follow-button {
+        padding: 5px 10px;
+        border: 1px solid black;
+        border-radius: 5px;
+
+    }
+
+    /* Styling for the body of the post */
+    .posts-wrapper .post .post-body {
+        grid-area: post-body;
+        background-color: blue;
+        padding: 10px;
+    }
+
+    /* Styling for the footer of the post */
+    .posts-wrapper .post .post-footer {
+        align-items: center;
+        display: flex;
+        grid-area: post-footer;
+        background-color: white;
+        padding-left: 10px;
+    }
+
+    .posts-wrapper .post .post-footer .footer-action {
+        display: flex;
+        align-items: center;
+        margin-right: 10px;
+        cursor: pointer;
+    }
+    .posts-wrapper .post .post-footer svg{
+        font-size: 21px;
+        margin-right:5px;
+    }
+    .posts-wrapper .post .post-footer span {
+        font-size: 14px;
+        font-weight: 300;
+    }
+    .posts-wrapper .post .post-footer .footer-action:hover {
+        text-decoration: underline;
+        border-radius: 5px;
+        background-color: #f0f0f0;
+        transition: background-color 0.15s, transform 0.2s;
+    }
+    /* Responsive adjustments for smaller screens */
+    @media (max-width: 900px) {
+        .posts-wrapper .post {
+            max-width: 90%;
+            grid-template-columns: 1fr 3fr;
+        }
+    }
