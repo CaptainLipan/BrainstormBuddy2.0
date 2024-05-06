@@ -127,6 +127,8 @@
         background-color: #f0f0f0;
         transition: background-color 0.15s, transform 0.2s;
     }
+
+
     /* Responsive adjustments for smaller screens */
     @media (max-width: 900px) {
         .posts-wrapper .post {

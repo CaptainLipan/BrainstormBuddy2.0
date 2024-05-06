@@ -1,0 +1,24 @@
+/* Styling for the Create Post button */
+.create-post-button {
+    margin-left: auto;
+    margin-right: 250px;
+    margin-top: 20px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 30px;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.create-post-button:hover {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}

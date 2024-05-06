@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Post } from '../../../models/post/PostModel';
-import { fetchPosts, fetchPostVotes } from '../../../api/api';
+import { fetchPosts, fetchPostVotes, fetchCommentsCount } from '../../../api/api';
 import './Posts.css';
 import ThumbUpOffAltIcon from '@mui/icons-material/ThumbUpOffAlt';
 import ThumbDownOffAltIcon from '@mui/icons-material/ThumbDownOffAlt';
@@ -10,32 +10,40 @@ import { ModeComment, Share } from "@mui/icons-material";
 const Posts: React.FC = () => {
     const [posts, setPosts] = useState<Post[]>([]);
     const [votes, setVotes] = useState<{ [key: string]: number }>({});
+    const [commentsCounts, setCommentsCounts] = useState<{ [key: string]: number }>({});
 
     useEffect(() => {
         const initFetch = async () => {
             try {
                 const data = await fetchPosts();
                 setPosts(data);
-// Fetch votes for each post
-                data.forEach(async (post: Post) => {
-                    const voteData = await fetchPostVotes(post._id);
-                    setVotes((prevVotes) => ({
+
+                for (const post of data) {
+                    const netVotes = await fetchPostVotes(post._id);
+                    const commentsCount = await fetchCommentsCount(post._id);  // Fetching comments count
+
+                    setVotes(prevVotes => ({
                         ...prevVotes,
-                        [post._id]: voteData.count  // assuming the backend sends back an object with a count property
+                        [post._id]: netVotes  // Updating votes state
                     }));
-                });
+
+                    setCommentsCounts(prevCounts => ({
+                        ...prevCounts,
+                        [post._id]: commentsCount  // Updating comments count state
+                    }));
+                }
             } catch (error) {
                 console.error('Error loading posts:', error);
                 setPosts([]);
             }
         };
 
-        initFetch();
+        initFetch().catch(error => console.error('Failed to initialize fetch:', error));
     }, []);
 
     return (
         <div className="posts-wrapper">
-            {posts.map((post: Post) => ( // Explicitly specify the type of post as Post
+            {posts.map((post: Post) => (
                 <div key={post._id} className="post">
                     <div className="post-sidebar">
                         <ThumbUpOffAltIcon className="upvote"/>
@@ -52,7 +60,7 @@ const Posts: React.FC = () => {
                     <div className="post-footer">
                         <div className="comments footer-action">
                             <ModeComment />
-                            <span>{post._comments.length}</span>
+                            <span>{commentsCounts[post._id] || 0}</span>
                         </div>
                         <div className="share footer-action">
                             <Share />

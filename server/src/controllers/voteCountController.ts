@@ -1,8 +1,8 @@
-// src/controllers/counterController.ts
+// src/controllers/voteCountController.ts
 import { Request, Response } from 'express';
 import db from '../models';
 
-const counterController = {
+const voteCountController = {
     async countPostVotes(req: Request, res: Response) {
         const { postId } = req.params;
 
@@ -38,4 +38,4 @@ const counterController = {
     },
 };
 
-export default counterController;
+export default voteCountController;
