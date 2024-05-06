@@ -6,6 +6,7 @@ import basicController from './controllers/basicController';
 import { createUser } from './controllers/userController';
 import commentController from './controllers/commentController';
 import voteController from "./controllers/voteController";
+import counterController from "./controllers/counterController";
 
 const router = express.Router();
 
@@ -33,6 +34,11 @@ router.post('/comment/upvote', voteController.upVoteComment);
 router.post('/comment/downvote', voteController.downVoteComment);
 router.post('/comment/undovote', voteController.undoVoteComment);
 
+// Route to get vote count for a post
+router.get('/post/:postId/votes', counterController.countPostVotes);
+
+// Route to get vote count for a comment
+router.get('/comment/:commentId/votes', counterController.countCommentVotes);
 
 
 export default router;

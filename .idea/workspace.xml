@@ -5,20 +5,207 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="10de905c-3790-4a3b-bc3d-7c01bc6cfec0" name="Changes" comment="sever adding">
-      <change afterPath="$PROJECT_DIR$/server/src/controllers/commentController.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/controllers/userController.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/controllers/voteController.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/database.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/models/Comment.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/models/User.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/models/Vote.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/models/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/.cache/babel-loader/0143d680e127634b86bc975b66b281cb162e7a450e0c868a5135c4d012ef0514.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/.cache/babel-loader/0990db5956e7b60c0e187f519125443e270de2260b56c9437f36abbabbeb64b8.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/.cache/babel-loader/0ba4d61f2faf5ed7659d2c9e2aef97b469ddcb8fcb15ea8d4df8183b39aaa55c.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/.cache/babel-loader/0d259f311157b3d533f3f770262d0cfa8cb83e3f71016d8e92bb7a869a862270.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/.cache/babel-loader/0e1034141623b6dcaa6215bc626cb258dc344f3d27b0ee58269c3d277fa73d8a.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/.cache/babel-loader/0f001dde273c5684d8e6f1ec9bf84c1de6b303e7b62256cda9a61cb457fb750b.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/.cache/babel-loader/10ede6cf1d2acf9a4ee724eca925a895920930a32200a384a321aa49526afbc5.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/.cache/babel-loader/168b9e4ca3bc556163ac3e54d90a11b29aade204be1c4c095a92e6309bd664d5.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/.cache/babel-loader/204326268cc13813f6af2299fead2e0deb81c9a5d7354a83cc33be9d8a6d604d.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/.cache/babel-loader/22f84b217f95e069ae68adfa84dee7d8fbf1455c066ddc998ca4bd5defce5d9c.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/.cache/babel-loader/230039d38fa7f37e70dbf695e9de413ab761403f934cf0e25a68330aab645d4a.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/.cache/babel-loader/263b0c5839bcda17cd7e0819530258b4e0b99487b6deac41e8a1c49c883887d4.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/.cache/babel-loader/27c2694b13a2041e827aa632ff35c82bb8d715151ec840b5ef607cf923e816f8.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/.cache/babel-loader/2810c6baf491e3150ee1e2e967adb749654105bf0b3a15e438acc4ea7a251f7e.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/.cache/babel-loader/364a8ab36c3513220b0f58746d8a6bf31fe80c2de2159e39468588efd0a05692.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/.cache/babel-loader/374f55fa5f1ebc96d7ee08e3ead825f49eaf52d34ee0deb38cd9cda7434d3860.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/.cache/babel-loader/380ca0f7461fb1750ffa0e72c5da99268a13acef3803d38ca2915603976b0d00.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/.cache/babel-loader/45a62ab89c27eb707ce7c79b6f026e06548c4bdd9cb5918bcd79f8fa7e47229c.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/.cache/babel-loader/47adfa842386c50fe3436051c3ac06d602b9b53c5fdbdd706be6a858efa5ea69.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/.cache/babel-loader/4aef614e63be5cd4cea16fb2dfd87a1508fb433ebb7f5217d5ae0a5f1156defb.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/.cache/babel-loader/520efd124b1dd3007335540c573f6ee7ccd66e3e3c38474cb814c74d5954da2e.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/.cache/babel-loader/555b89817423e650228c23c32269b3606c6b755729afc07658a273d4c3de8ec2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/.cache/babel-loader/573ecffda2e1a520982e9a3acf2e996846d703b54db8018c3adf9175ad5fe82d.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/.cache/babel-loader/58041baf6fdbd71896c5de68283ba3748b8d54cbce8e8ece7061433325095589.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/.cache/babel-loader/5a6c17f2ca272b8dfa49cd1184024f8414abf3616876122c1a94ee05d1ef883f.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/.cache/babel-loader/643efa49a804409c02210de729d3658f02ccca8b7405dc82d6c08e0025d6ebe3.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/.cache/babel-loader/656b677130d7cf51d9391a0c8b57c5ffaba8388ff244b281827b20b82c6e1bf7.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/.cache/babel-loader/68462a69abf26ad719204f2fc000d6649108a8c773e1ffb6667bc2a9d6b52072.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/.cache/babel-loader/68a2f9b180086ec3a924fc0c27d3e9b59de8ebc0c5520925f9c3b8fd95e0d0f5.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/.cache/babel-loader/6f90f9b35abc85433e70acbdf5b801e5246c06a3f6f590f3ba5969015f0d1b1f.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/.cache/babel-loader/74c14fb0c887528142615701018f8366f04aade8547e02d8516daeceb80b700a.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/.cache/babel-loader/7954419ee9b0fd94572c0d441136afcda3bc61816eb14dd5bc9ce1c8f3f5a126.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/.cache/babel-loader/82334bcae354c39745cd62e105dcfaa3c3760fb6e25741f83ce4fdef461dced1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/.cache/babel-loader/84fd40f550d6e1feb6ddc18501dd73d5f28444ff830ef32c96d8033526962394.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/.cache/babel-loader/8806f8101f21cff53f1ebd6d2426eae9198e476ebd28bd410050bb80683416f4.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/.cache/babel-loader/8f257a2a6ccaa4d890ca2c07f489cdc25e9b82598d15f0ae53ea637983a0376b.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/.cache/babel-loader/96cf68b204c0096e68936b28635f2c7c40f82fc639cae1ce1d715c9e0393a100.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/.cache/babel-loader/980434af6be0681cafb4c0d1fd61ed20327ded138b9398517c9654371624b703.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/.cache/babel-loader/9ca1fe7131a65b5148e21902d4b379e0660deca63b0463827e679f7a6f3e5382.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/.cache/babel-loader/a21ca4093ab50d85a4cafec6461e34cd9f89723e24a2f5d9d634ad18fa6b82f1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/.cache/babel-loader/a30ec0b7ecbf9ac46c025b6678271e6728e5f051176c384c1a592ec037ca0715.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/.cache/babel-loader/a4999d34b52360cd6dff2a7d6a5a85d582283a990168ee833a7201752cc8e904.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/.cache/babel-loader/ac78cea0aca85c6763bc9d40d751a38806a2c4da3543931ec1fee1df860a14ae.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/.cache/babel-loader/afed98445ddbbe7af5b6044715168838b338cd3f4ffc2062d767a19ed1eb7631.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/.cache/babel-loader/b0b102560f567799eac0bea8af0b1badedcdd4eeb48bba9caf6d2107a02a4612.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/.cache/babel-loader/c6eacb8cc8db86c8fb1392873a1935fbf40e4d06a0b7f3445882f311abd8cca0.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/.cache/babel-loader/c9d25b1ffbae5224542566e7a731c941dddbaf2f46172fd698f0ce56c4ac0d6c.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/.cache/babel-loader/c9e7fb67ae8936d0962c20e45dd1bfbd7ae8712e0ffaa1c594d17916a3d53890.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/.cache/babel-loader/cc61f6ff181ebb2c21ff9d9d9a421707d0590e46308af4a5c5aea4860574206d.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/.cache/babel-loader/d9425bb32c2c988b7702a1dd93a2d2af67e75e989214e2b304c838b17272cb35.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/.cache/babel-loader/dd3c6bf4c6bc3f9a023fec2c887488b0c08615c51f3242e224ca5920f2e28dab.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/.cache/babel-loader/e420bdbce8a85c6221c474ad413f0eaee98a87328edc30cbeda5afe85ffd5695.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/.cache/babel-loader/e665c1e4e8f96a9c4ef7ab0610766c0fd7a7cff47036563f968a86b60d1c494b.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/.cache/babel-loader/e899874a9088f6fe947cbb109af9d9645c4a653ba1848b178ff46978bb178c45.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/.cache/babel-loader/f43d62923c79b9438afaf9f46d6b531bf2d19152f0e619d78f1daf7386571da2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/.cache/babel-loader/f9db72bf3a77cbb109a80a9baad8e962e2e7375df38cde2eac08034098fdc4c9.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/.cache/babel-loader/fa6dc6d6cc494b1e88f3b24885679c605a1f8173f8836d4be5f444bbf7591096.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/.cache/babel-loader/ff048773dd2ff56008c2f8f7f35be0698d32913ff31d11f6067e340362459066.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/axios/CHANGELOG.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/axios/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/axios/MIGRATION_GUIDE.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/axios/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/axios/SECURITY.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/axios/dist/axios.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/axios/dist/axios.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/axios/dist/axios.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/axios/dist/axios.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/axios/dist/browser/axios.cjs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/axios/dist/browser/axios.cjs.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/axios/dist/esm/axios.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/axios/dist/esm/axios.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/axios/dist/esm/axios.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/axios/dist/esm/axios.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/axios/dist/node/axios.cjs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/axios/dist/node/axios.cjs.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/axios/index.d.cts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/axios/index.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/axios/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/axios/lib/adapters/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/axios/lib/adapters/adapters.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/axios/lib/adapters/http.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/axios/lib/adapters/xhr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/axios/lib/axios.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/axios/lib/cancel/CancelToken.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/axios/lib/cancel/CanceledError.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/axios/lib/cancel/isCancel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/axios/lib/core/Axios.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/axios/lib/core/AxiosError.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/axios/lib/core/AxiosHeaders.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/axios/lib/core/InterceptorManager.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/axios/lib/core/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/axios/lib/core/buildFullPath.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/axios/lib/core/dispatchRequest.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/axios/lib/core/mergeConfig.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/axios/lib/core/settle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/axios/lib/core/transformData.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/axios/lib/defaults/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/axios/lib/defaults/transitional.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/axios/lib/env/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/axios/lib/env/classes/FormData.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/axios/lib/env/data.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/axios/lib/helpers/AxiosTransformStream.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/axios/lib/helpers/AxiosURLSearchParams.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/axios/lib/helpers/HttpStatusCode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/axios/lib/helpers/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/axios/lib/helpers/ZlibHeaderTransformStream.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/axios/lib/helpers/bind.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/axios/lib/helpers/buildURL.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/axios/lib/helpers/callbackify.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/axios/lib/helpers/combineURLs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/axios/lib/helpers/cookies.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/axios/lib/helpers/deprecatedMethod.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/axios/lib/helpers/formDataToJSON.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/axios/lib/helpers/formDataToStream.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/axios/lib/helpers/fromDataURI.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/axios/lib/helpers/isAbsoluteURL.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/axios/lib/helpers/isAxiosError.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/axios/lib/helpers/isURLSameOrigin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/axios/lib/helpers/null.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/axios/lib/helpers/parseHeaders.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/axios/lib/helpers/parseProtocol.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/axios/lib/helpers/readBlob.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/axios/lib/helpers/speedometer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/axios/lib/helpers/spread.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/axios/lib/helpers/throttle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/axios/lib/helpers/toFormData.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/axios/lib/helpers/toURLEncodedForm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/axios/lib/helpers/validator.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/axios/lib/platform/browser/classes/Blob.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/axios/lib/platform/browser/classes/FormData.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/axios/lib/platform/browser/classes/URLSearchParams.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/axios/lib/platform/browser/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/axios/lib/platform/common/utils.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/axios/lib/platform/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/axios/lib/platform/node/classes/FormData.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/axios/lib/platform/node/classes/URLSearchParams.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/axios/lib/platform/node/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/axios/lib/utils.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/axios/node_modules/form-data/License" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/axios/node_modules/form-data/README.md.bak" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/axios/node_modules/form-data/Readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/axios/node_modules/form-data/index.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/axios/node_modules/form-data/lib/browser.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/axios/node_modules/form-data/lib/form_data.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/axios/node_modules/form-data/lib/populate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/axios/node_modules/form-data/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/axios/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/proxy-from-env/.eslintrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/proxy-from-env/.travis.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/proxy-from-env/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/proxy-from-env/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/proxy-from-env/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/proxy-from-env/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/node_modules/proxy-from-env/test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/src/api/api.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/node_modules/@types/cors/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/node_modules/@types/cors/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/node_modules/@types/cors/index.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/node_modules/@types/cors/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/node_modules/cors/CONTRIBUTING.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/node_modules/cors/HISTORY.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/node_modules/cors/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/node_modules/cors/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/node_modules/cors/lib/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/node_modules/cors/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/node_modules/object-assign/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/node_modules/object-assign/license" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/node_modules/object-assign/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/node_modules/object-assign/readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/controllers/counterController.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/.env" beforeDir="false" afterPath="$PROJECT_DIR$/server/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/client/node_modules/.cache/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/client/client/node_modules/.cache/.eslintcache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/client/node_modules/.cache/default-development/0.pack" beforeDir="false" afterPath="$PROJECT_DIR$/client/client/node_modules/.cache/default-development/0.pack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/client/node_modules/.cache/default-development/1.pack" beforeDir="false" afterPath="$PROJECT_DIR$/client/client/node_modules/.cache/default-development/1.pack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/client/node_modules/.cache/default-development/10.pack" beforeDir="false" afterPath="$PROJECT_DIR$/client/client/node_modules/.cache/default-development/10.pack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/client/node_modules/.cache/default-development/2.pack" beforeDir="false" afterPath="$PROJECT_DIR$/client/client/node_modules/.cache/default-development/2.pack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/client/node_modules/.cache/default-development/3.pack" beforeDir="false" afterPath="$PROJECT_DIR$/client/client/node_modules/.cache/default-development/3.pack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/client/node_modules/.cache/default-development/4.pack" beforeDir="false" afterPath="$PROJECT_DIR$/client/client/node_modules/.cache/default-development/4.pack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/client/node_modules/.cache/default-development/5.pack" beforeDir="false" afterPath="$PROJECT_DIR$/client/client/node_modules/.cache/default-development/5.pack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/client/node_modules/.cache/default-development/6.pack" beforeDir="false" afterPath="$PROJECT_DIR$/client/client/node_modules/.cache/default-development/6.pack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/client/node_modules/.cache/default-development/7.pack" beforeDir="false" afterPath="$PROJECT_DIR$/client/client/node_modules/.cache/default-development/7.pack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/client/node_modules/.cache/default-development/8.pack" beforeDir="false" afterPath="$PROJECT_DIR$/client/client/node_modules/.cache/default-development/8.pack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/client/node_modules/.cache/default-development/9.pack" beforeDir="false" afterPath="$PROJECT_DIR$/client/client/node_modules/.cache/default-development/9.pack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/client/node_modules/.cache/default-development/index.pack" beforeDir="false" afterPath="$PROJECT_DIR$/client/client/node_modules/.cache/default-development/index.pack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/client/node_modules/.cache/default-development/index.pack.old" beforeDir="false" afterPath="$PROJECT_DIR$/client/client/node_modules/.cache/default-development/index.pack.old" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/client/node_modules/.cache/tsconfig.tsbuildinfo" beforeDir="false" afterPath="$PROJECT_DIR$/client/client/node_modules/.cache/tsconfig.tsbuildinfo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/client/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/client/node_modules/.package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/client/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/client/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/client/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/client/src/components/landing/Landing.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/client/src/components/routes/landing/Landing.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/client/src/components/landing/Landing.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/client/src/components/routes/landing/Landing.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/client/src/components/mainbar/posts/Posts.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/client/src/components/mainbar/posts/Posts.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/client/src/models/post/PostModel.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/client/src/models/post/PostModel.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/.package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/app.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/app.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/models/Post.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/models/Post.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/routes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +230,7 @@
         <option name="title" value="All" />
       </GitPushTagMode>
     </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/client" />
   </component>
   <component name="GitHubPullRequestSearchHistory"><![CDATA[{
   "lastFilter": {
@@ -111,7 +298,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "<unknown>",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -134,11 +321,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/client/src/components/routes/landing" />
       <recent name="$PROJECT_DIR$/server" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/server/src" />
       <recent name="$PROJECT_DIR$/client/src/components/mainbar/filter" />
-      <recent name="$PROJECT_DIR$/client/src/components/navbar" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -150,7 +337,7 @@
       <option name="presentableId" value="Default" />
       <updated>1714768715577</updated>
       <workItem from="1714768716592" duration="117000" />
-      <workItem from="1714768851040" duration="67260000" />
+      <workItem from="1714768851040" duration="76568000" />
     </task>
     <task id="LOCAL-00001" summary="git init&#10;git add README.md&#10;git commit -m &quot;first commit&quot;&#10;git branch -M main&#10;git remote add origin https://github.com/CaptainLipan/BrainstormBuddy-2.0.git&#10;git push -u origin main">
       <option name="closed" value="true" />
@@ -184,7 +371,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714931046419</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="sever adding">
+      <option name="closed" value="true" />
+      <created>1714957226559</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1714957226559</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
