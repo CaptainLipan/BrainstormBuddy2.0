@@ -5,7 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="10de905c-3790-4a3b-bc3d-7c01bc6cfec0" name="Changes" comment="sever adding">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/controllers/commentController.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/controllers/userController.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/controllers/voteController.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/database.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/models/Comment.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/models/User.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/models/Vote.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/models/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/.env" beforeDir="false" afterPath="$PROJECT_DIR$/server/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/app.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/app.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/models/Post.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/models/Post.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/routes.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,6 +95,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
 }</component>
@@ -134,7 +150,7 @@
       <option name="presentableId" value="Default" />
       <updated>1714768715577</updated>
       <workItem from="1714768716592" duration="117000" />
-      <workItem from="1714768851040" duration="56449000" />
+      <workItem from="1714768851040" duration="67260000" />
     </task>
     <task id="LOCAL-00001" summary="git init&#10;git add README.md&#10;git commit -m &quot;first commit&quot;&#10;git branch -M main&#10;git remote add origin https://github.com/CaptainLipan/BrainstormBuddy-2.0.git&#10;git push -u origin main">
       <option name="closed" value="true" />

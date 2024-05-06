@@ -1,27 +1,25 @@
-// src/models/Post.ts
-import mongoose, { Schema, Document, Model } from 'mongoose';
+import mongoose, { Schema, Document } from 'mongoose';
+import { IComment } from './Comment'; // Make sure this import is correct
 
-// Interface for the Post document
 export interface IPost extends Document {
     title: string;
     text: string;
-    link?: string; // Optional link
-    _creator: mongoose.Schema.Types.ObjectId; // Reference to a User document
+    link?: string;
+    _creator: mongoose.Schema.Types.ObjectId;
     createdAt: Date;
     updatedAt: Date;
+    _comments: mongoose.Schema.Types.ObjectId[]; // This should be an array of ObjectIds
 }
 
-// Schema definition for the Post
-const PostSchema: Schema<IPost> = new Schema({
+const PostSchema: Schema = new Schema({
     title: { type: String, required: true },
     text: { type: String, required: true },
-    link: { type: String },
-    _creator: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true }
+    link: { type: String, optional: true },
+    _creator: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
+    _comments: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Comment' }] // Ensure this is correct
 }, {
-    timestamps: true // Mongoose uses this option to automatically add `createdAt` and `updatedAt` fields
+    timestamps: true
 });
 
-// Creating the model
-const Post: Model<IPost> = mongoose.model<IPost>('Post', PostSchema);
-
+const Post = mongoose.model<IPost>('Post', PostSchema);
 export default Post;

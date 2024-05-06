@@ -1,13 +1,16 @@
 // src/index.ts
-import express from 'express';
+import 'dotenv/config';
+import app from './app';
+import connectDB from './database';
 
-const app = express();
 const PORT = process.env.PORT || 4000;
 
-app.get('/', (req, res) => {
-    res.send('Hello  1234!');
-});
-
-app.listen(PORT, () => {
-    console.log(`Server running on http://localhost:${PORT}`);
+// Attempt to connect to the database and then start the server
+connectDB().then(() => {
+    app.listen(PORT, () => {
+        console.log(`Server running on http://localhost:${PORT}`);
+    });
+}).catch((error) => {
+    console.error('Failed to connect to database:', error);
+    process.exit(1);
 });
