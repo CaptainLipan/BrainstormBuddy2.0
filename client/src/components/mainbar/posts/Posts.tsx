@@ -1,54 +1,133 @@
 import React, { useEffect, useState } from 'react';
-import { Post } from '../../../models/post/PostModel';
-import { fetchPosts, fetchPostVotes, fetchCommentsCount } from '../../../api/api';
+import { fetchPosts, fetchPostVotes, upvotePost, downvotePost, undoVotePost } from '../../../api/api';
 import './Posts.css';
 import ThumbUpOffAltIcon from '@mui/icons-material/ThumbUpOffAlt';
 import ThumbDownOffAltIcon from '@mui/icons-material/ThumbDownOffAlt';
 import Button from '../../button/Button';
 import { ModeComment, Share } from "@mui/icons-material";
+import { Post } from '../../../models/post/PostModel';
+
+interface PostData {
+    _id: string;
+    title: string;
+    text: string;
+    link?: string;
+    userId: string;
+    _creator: { username: string };
+    createdAt: string;
+    updatedAt?: string;
+}
 
 const Posts: React.FC = () => {
     const [posts, setPosts] = useState<Post[]>([]);
-    const [votes, setVotes] = useState<{ [key: string]: number }>({});
-    const [commentsCounts, setCommentsCounts] = useState<{ [key: string]: number }>({});
+    const userId = '66380f8f7af302d62f105e55'; // Actual user ID
 
     useEffect(() => {
         const initFetch = async () => {
             try {
-                const data = await fetchPosts();
-                setPosts(data);
+                const data: PostData[] = await fetchPosts();
 
-                for (const post of data) {
-                    const netVotes = await fetchPostVotes(post._id);
-                    const commentsCount = await fetchCommentsCount(post._id);  // Fetching comments count
+                const postsWithVotes: Promise<Post>[] = data.map(async (post) => {
+                    const votesCount = await fetchPostVotes(post._id);
+                    return {
+                        ...post,
+                        _comments: [],
+                        upvotes: votesCount,
+                    };
+                });
 
-                    setVotes(prevVotes => ({
-                        ...prevVotes,
-                        [post._id]: netVotes  // Updating votes state
-                    }));
+                const enrichedPosts: Post[] = await Promise.all(postsWithVotes);
 
-                    setCommentsCounts(prevCounts => ({
-                        ...prevCounts,
-                        [post._id]: commentsCount  // Updating comments count state
-                    }));
-                }
+                setPosts(enrichedPosts);
             } catch (error) {
                 console.error('Error loading posts:', error);
                 setPosts([]);
             }
         };
 
-        initFetch().catch(error => console.error('Failed to initialize fetch:', error));
+        initFetch();
     }, []);
+
+    const hasUpvoted = (post: Post) => post.upvoted === true;
+    const hasDownvoted = (post: Post) => post.downvoted === true;
+
+    const handleUpvote = async (postId: string) => {
+        try {
+            const post = posts.find(post => post._id === postId);
+            if (post) {
+                if (post.userId === userId) {
+                    // User has already upvoted, so undo the vote
+                    await undoVotePost({ postId, userId });
+                    const updatedPosts = posts.map(post =>
+                        post._id === postId ? { ...post, upvotes: post.upvotes - 1, upvoted: false } : post
+                    );
+                    setPosts(updatedPosts);
+                } else {
+                    if (post.userId !== userId && post.downvoted) {
+                        // User previously downvoted, now upvote
+                        await upvotePost({ postId, userId });
+                        const updatedPosts = posts.map(post =>
+                            post._id === postId ? { ...post, upvotes: post.upvotes + 1, downvoted: false } : post
+                        );
+                        setPosts(updatedPosts);
+                    } else {
+                        // User hasn't voted, upvote
+                        await upvotePost({ postId, userId });
+                        const updatedPosts = posts.map(post =>
+                            post._id === postId ? { ...post, upvotes: post.upvotes + 1, upvoted: true } : post
+                        );
+                        setPosts(updatedPosts);
+                    }
+                }
+            }
+        } catch (error) {
+            console.error('Error upvoting post:', error);
+        }
+    };
+
+    const handleDownvote = async (postId: string) => {
+        try {
+            const post = posts.find(post => post._id === postId);
+            if (post) {
+                if (post.userId === userId) {
+                    // User has already downvoted, so undo the vote
+                    await undoVotePost({ postId, userId });
+                    const updatedPosts = posts.map(post =>
+                        post._id === postId ? { ...post, upvotes: post.upvotes + 1, downvoted: false } : post
+                    );
+                    setPosts(updatedPosts);
+                } else {
+                    if (post.userId !== userId && post.upvoted) {
+                        // User previously upvoted, now downvote
+                        await downvotePost({ postId, userId });
+                        const updatedPosts = posts.map(post =>
+                            post._id === postId ? { ...post, upvotes: post.upvotes - 1, upvoted: false } : post
+                        );
+                        setPosts(updatedPosts);
+                    } else {
+                        // User hasn't voted, downvote
+                        await downvotePost({ postId, userId });
+                        const updatedPosts = posts.map(post =>
+                            post._id === postId ? { ...post, upvotes: post.upvotes - 1, downvoted: true } : post
+                        );
+                        setPosts(updatedPosts);
+                    }
+                }
+            }
+        } catch (error) {
+            console.error('Error downvoting post:', error);
+        }
+    };
+
 
     return (
         <div className="posts-wrapper">
             {posts.map((post: Post) => (
                 <div key={post._id} className="post">
                     <div className="post-sidebar">
-                        <ThumbUpOffAltIcon className="upvote"/>
-                        <span>{votes[post._id] || 0}</span>
-                        <ThumbDownOffAltIcon className="downvote"/>
+                        <ThumbUpOffAltIcon className="upvote" onClick={() => handleUpvote(post._id)} />
+                        <span>{post.upvotes}</span>
+                        <ThumbDownOffAltIcon className="downvote" onClick={() => handleDownvote(post._id)} />
                     </div>
                     <div className="post-title">
                         <span>Posted by {post._creator.username}</span>
@@ -60,7 +139,7 @@ const Posts: React.FC = () => {
                     <div className="post-footer">
                         <div className="comments footer-action">
                             <ModeComment />
-                            <span>{commentsCounts[post._id] || 0}</span>
+                            <span>{post._comments.length}</span>
                         </div>
                         <div className="share footer-action">
                             <Share />

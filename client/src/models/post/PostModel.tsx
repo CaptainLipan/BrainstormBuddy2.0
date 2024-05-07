@@ -4,13 +4,14 @@ export interface Post {
     title: string;
     text: string;
     link?: string;
-    _creator: {
-        username: string;  // Simplified user reference
-    };
-    createdAt: Date;
-    updatedAt: Date;
-    _comments: Comment[];  // Assuming there's a Comment interface defined somewhere
-    upvotes: number;  // Assuming you track upvotes count
+    userId: string;
+    _comments: Comment[];
+    upvotes: number;
+    upvoted?: boolean;
+    downvoted?: boolean;
+    _creator: { username: string };
+    createdAt: string;
+    updatedAt?: string;
 }
 
 // Optionally, if you have a Comment model

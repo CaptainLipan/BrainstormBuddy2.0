@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Import Routes
-import Landing from "./components/routes/landing/Landing";
-import CreatePostPage from "./components/routes/createPost/CreatePost"; // Import your create post page component
+import Landing from "./routes/landing/Landing";
+import CreatePostPage from "./routes/createPost/CreatePost"; // Import your create post page component
 
 function App() {
     return (

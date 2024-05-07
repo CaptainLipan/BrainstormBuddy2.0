@@ -1,0 +1,62 @@
+/* CreatePost.css */
+.create-post-form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif; /* Added font-family for better text readability */
+}
+
+.create-post-form label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.create-post-form input[type="text"],
+.create-post-form textarea {
+    width: 100%;
+    padding: 10px; /* Adjusted padding for better text input visibility */
+    margin-bottom: 15px; /* Increased margin for better spacing */
+    border: 2px solid #ccc; /* Made border thicker */
+    border-radius: 4px;
+    box-sizing: border-box;
+    transition: border-color 0.3s; /* Smooth transition for focus */
+}
+
+.create-post-form input[type="text"]:focus,
+.create-post-form textarea:focus {
+    border-color: #0056b3; /* Changed focus color to match button hover */
+    box-shadow: 0 0 8px rgba(0, 86, 179, 0.2); /* Subtle focus shadow */
+}
+
+.create-post-form .error {
+    color: red;
+    margin-top: 5px;
+    font-size: 0.9em; /* Slightly smaller text for error messages */
+}
+
+/* CreatePost.css */
+.create-post-button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.create-post-button {
+    background-color: black;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+    font-size: 200%;
+}
+
+.create-post-button:hover {
+    background-color: #0056b3;
+}
+
+.cancel-button {
+    background-color: #dc3545;
+}
