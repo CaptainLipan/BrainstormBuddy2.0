@@ -1,0 +1,39 @@
+/* CommentsSection CSS */
+.posts-wrapper .post .comments-section {
+    margin: 20px auto; /* centering the comments section */
+    width: 95%; /* slightly smaller than the post container */
+    padding: 10px;
+    background-color: #f9f9f9; /* Light background for the comments area */
+    border: 1px solid #ddd; /* subtle border */
+    border-radius: 8px; /* consistent border radius with posts */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* softer shadow than posts */
+}
+
+.posts-wrapper .post .comments-form {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Aligns textarea and button */
+    padding: 10px;
+}
+
+.posts-wrapper .post .comments-form textarea {
+    width: 80%; /* makes textarea take most of the form space */
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: none; /* Prevents resizing the textarea */
+}
+
+.posts-wrapper .post .comments-form button {
+    padding: 8px 16px;
+    background-color: #007bff; /* Blue background */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 10px; /* space between textarea and button */
+}
+
+.posts-wrapper .post .comments-form button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
