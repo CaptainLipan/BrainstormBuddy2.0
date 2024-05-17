@@ -5,27 +5,44 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="10de905c-3790-4a3b-bc3d-7c01bc6cfec0" name="Changes" comment="sever adding">
+      <change afterPath="$PROJECT_DIR$/client/client/src/components/mainbar/comments/Comment.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/src/components/mainbar/comments/Comment.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/src/components/mainbar/comments/CommentSection.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/src/components/mainbar/comments/CommentsSection.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/src/components/mainbar/posts/handleVote.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/client/src/models/comment/CommentModel.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/client/node_modules/.cache/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/client/client/node_modules/.cache/.eslintcache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/client/node_modules/.cache/default-development/0.pack" beforeDir="false" afterPath="$PROJECT_DIR$/client/client/node_modules/.cache/default-development/0.pack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/client/node_modules/.cache/default-development/1.pack" beforeDir="false" afterPath="$PROJECT_DIR$/client/client/node_modules/.cache/default-development/1.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/client/node_modules/.cache/default-development/10.pack" beforeDir="false" afterPath="$PROJECT_DIR$/client/client/node_modules/.cache/default-development/10.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/client/node_modules/.cache/default-development/11.pack" beforeDir="false" afterPath="$PROJECT_DIR$/client/client/node_modules/.cache/default-development/11.pack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/client/node_modules/.cache/default-development/12.pack" beforeDir="false" afterPath="$PROJECT_DIR$/client/client/node_modules/.cache/default-development/12.pack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/client/node_modules/.cache/default-development/13.pack" beforeDir="false" afterPath="$PROJECT_DIR$/client/client/node_modules/.cache/default-development/13.pack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/client/node_modules/.cache/default-development/14.pack" beforeDir="false" afterPath="$PROJECT_DIR$/client/client/node_modules/.cache/default-development/14.pack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/client/node_modules/.cache/default-development/15.pack" beforeDir="false" afterPath="$PROJECT_DIR$/client/client/node_modules/.cache/default-development/15.pack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/client/node_modules/.cache/default-development/17.pack" beforeDir="false" afterPath="$PROJECT_DIR$/client/client/node_modules/.cache/default-development/17.pack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/client/node_modules/.cache/default-development/18.pack" beforeDir="false" afterPath="$PROJECT_DIR$/client/client/node_modules/.cache/default-development/18.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/client/node_modules/.cache/default-development/3.pack" beforeDir="false" afterPath="$PROJECT_DIR$/client/client/node_modules/.cache/default-development/3.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/client/node_modules/.cache/default-development/5.pack" beforeDir="false" afterPath="$PROJECT_DIR$/client/client/node_modules/.cache/default-development/5.pack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/client/node_modules/.cache/default-development/6.pack" beforeDir="false" afterPath="$PROJECT_DIR$/client/client/node_modules/.cache/default-development/6.pack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/client/node_modules/.cache/default-development/7.pack" beforeDir="false" afterPath="$PROJECT_DIR$/client/client/node_modules/.cache/default-development/7.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/client/node_modules/.cache/default-development/8.pack" beforeDir="false" afterPath="$PROJECT_DIR$/client/client/node_modules/.cache/default-development/8.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/client/node_modules/.cache/default-development/9.pack" beforeDir="false" afterPath="$PROJECT_DIR$/client/client/node_modules/.cache/default-development/9.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/client/node_modules/.cache/default-development/index.pack" beforeDir="false" afterPath="$PROJECT_DIR$/client/client/node_modules/.cache/default-development/index.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/client/node_modules/.cache/default-development/index.pack.old" beforeDir="false" afterPath="$PROJECT_DIR$/client/client/node_modules/.cache/default-development/index.pack.old" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/client/node_modules/.cache/tsconfig.tsbuildinfo" beforeDir="false" afterPath="$PROJECT_DIR$/client/client/node_modules/.cache/tsconfig.tsbuildinfo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/client/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/client/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/client/src/components/navbar/logo/Logo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/client/src/components/navbar/logo/Logo.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/client/src/components/navbar/searchbar/Searchabar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/client/src/components/navbar/searchbar/Searchabar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/client/src/components/routes/createPost/CreatePost.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/client/src/routes/createPost/CreatePost.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/client/src/components/routes/createPost/CreatePost.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/client/src/routes/createPost/CreatePost.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/client/src/components/routes/landing/Landing.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/client/src/routes/landing/Landing.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/client/src/components/routes/landing/Landing.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/client/src/routes/landing/Landing.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/controllers/postController.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/controllers/postController.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/database.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/database.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/models/Post.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/models/Post.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/client/src/api/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/client/src/api/api.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/client/src/components/mainbar/filter/Filter.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/client/src/components/mainbar/filter/Filter.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/client/src/components/mainbar/posts/Posts.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/client/src/components/mainbar/posts/Posts.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/client/src/models/post/PostModel.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/client/src/models/post/PostModel.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/client/src/routes/landing/Landing.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/client/src/routes/landing/Landing.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/controllers/commentController.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/controllers/commentController.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/controllers/voteController.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/controllers/voteController.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/controllers/voteCountController.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/controllers/voteCountController.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/models/Comment.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/models/Comment.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/models/Vote.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/models/Vote.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/routes.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +67,7 @@
         <option name="title" value="All" />
       </GitPushTagMode>
     </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/client" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory"><![CDATA[{
   "lastFilter": {
@@ -118,7 +135,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "<unknown>",
+    "git-widget-placeholder": "master",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -157,7 +174,7 @@
       <option name="presentableId" value="Default" />
       <updated>1714768715577</updated>
       <workItem from="1714768716592" duration="117000" />
-      <workItem from="1714768851040" duration="109414000" />
+      <workItem from="1714768851040" duration="146611000" />
     </task>
     <task id="LOCAL-00001" summary="git init&#10;git add README.md&#10;git commit -m &quot;first commit&quot;&#10;git branch -M main&#10;git remote add origin https://github.com/CaptainLipan/BrainstormBuddy-2.0.git&#10;git push -u origin main">
       <option name="closed" value="true" />
@@ -222,9 +239,15 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/client/src/components/navbar/actions/Actions.tsx</url>
-          <line>47</line>
+          <line>40</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/client/src/api/api.ts</url>
+          <line>23</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

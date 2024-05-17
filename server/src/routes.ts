@@ -1,6 +1,4 @@
-// src/routes.ts
-
-import express from 'express';
+import express, { Request, Response } from 'express';
 import postController from './controllers/postController';
 import basicController from './controllers/basicController';
 import { createUser } from './controllers/userController';
@@ -12,39 +10,29 @@ import commentCountController from "./controllers/commentCountController";
 const router = express.Router();
 
 // Basic routes
-router.get('/', basicController.get); // Home or base route
+router.get('/', basicController.get);
 
 // User routes
-router.post('/users', createUser); // Endpoint to create a user
+router.post('/users', createUser);
 
 // Post routes
-router.post('/post', postController.post); // Create a post
-router.get('/posts', postController.getAll); // Get all posts
+router.post('/post', postController.post);
+router.get('/posts', postController.getAll);
 
 // Comment routes
-router.post('/comment', commentController.post); // Create a comment
+router.post('/comment', commentController.post);
+router.get('/post/:postId/comments', commentController.getCommentsForPost);
 
 // Comment count routes
 router.get('/post/:postId/comments/count', commentCountController.getCount);
 
-
-
-// Routes for handling votes on posts
-router.post('/post/upvote', voteController.upVotePost);
-router.post('/post/downvote', voteController.downVotePost);
-router.post('/post/undovote', voteController.undoVotePost);
-
-// Routes for handling votes on comments
-router.post('/comment/upvote', voteController.upVoteComment);
-router.post('/comment/downvote', voteController.downVoteComment);
-router.post('/comment/undovote', voteController.undoVoteComment);
+// Unified voting routes
+router.post('/vote/toggle/:type/:id/:voteType', voteController.toggleVote); // type can be 'post' or 'comment', id is postId or commentId, voteType is 'upvote' or 'downvote'
 
 // Route to get vote count for a post
 router.get('/post/:postId/votes', voteCountController.countPostVotes);
 
 // Route to get vote count for a comment
 router.get('/comment/:commentId/votes', voteCountController.countCommentVotes);
-
-
 
 export default router;

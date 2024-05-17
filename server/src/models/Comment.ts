@@ -1,4 +1,3 @@
-// src/models/Comment.ts
 import mongoose, { Schema, Document } from 'mongoose';
 
 export interface IComment extends Document {
@@ -8,6 +7,7 @@ export interface IComment extends Document {
     _creator: mongoose.Schema.Types.ObjectId;  // Reference to User document
     _post: mongoose.Schema.Types.ObjectId;     // Reference to Post document
 }
+
 const commentSchema = new Schema<IComment>({
     text: { type: String, required: true },
     isDeleted: { type: Boolean, default: false },
@@ -16,15 +16,12 @@ const commentSchema = new Schema<IComment>({
     _post: { type: Schema.Types.ObjectId, ref: 'Post', required: true }
 });
 
-// Use function instead of arrow function to keep 'this' context correct
-commentSchema.pre<IComment>('find', function(next) {
-    this.populate({
-        path: '_creator',
-        select: 'username createdAt -_id'
-    });
+// Pre-find hook to populate _creator and _post
+commentSchema.pre('find', function(next) {
+    this.populate('_creator', 'username createdAt -_id')
+        .populate('_post', 'title createdAt -_id');
     next();
 });
 
 const Comment = mongoose.model<IComment>('Comment', commentSchema);
-
 export default Comment;

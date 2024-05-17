@@ -43,5 +43,30 @@ commentController.post = (req: Request, res: Response): void => {
         });
     });
 };
+commentController.getCommentsForPost = (req: Request, res: Response): void => {
+    const postId = req.params.postId;  // Get the postId from URL parameters
+
+    db.Comment.find({ _post: postId, isDeleted: false })  // Query for comments related to the postId and not deleted
+        .populate('_creator', 'username')  // Optionally populate the creator details
+        .then(comments => {
+            if (comments.length) {
+                res.status(200).json({
+                    success: true,
+                    comments: comments
+                });
+            } else {
+                res.status(404).json({
+                    success: false,
+                    message: 'No comments found for this post'
+                });
+            }
+        })
+        .catch(err => {
+            res.status(500).json({
+                success: false,
+                message: err.message || 'Error retrieving comments'
+            });
+        });
+};
 
 export default commentController;

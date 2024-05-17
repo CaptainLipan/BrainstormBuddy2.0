@@ -1,5 +1,5 @@
 import mongoose, { Schema, Document } from 'mongoose';
-import { IComment } from './Comment'; // Make sure this import is correct
+
 
 export interface IPost extends Document {
     title: string;
