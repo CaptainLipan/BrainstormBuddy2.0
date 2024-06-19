@@ -1,3 +1,4 @@
+//src/routes/createPost/CreatePost.tsx:
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Navbar from "../../components/navbar/Navbar";

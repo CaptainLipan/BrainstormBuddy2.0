@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { fetchPosts, fetchPostVotes, postComment, getCommentsForPost } from '../../../api/api';
+import { fetchPosts, fetchPostVotes, postComment, getCommentsForPost, fetchCommentsCount } from '../../../api/api';
 import './Posts.css';
 import ThumbUpOffAltIcon from '@mui/icons-material/ThumbUpOffAlt';
 import ThumbDownOffAltIcon from '@mui/icons-material/ThumbDownOffAlt';
 import Button from '../../button/Button';
 import { ModeComment, Share } from "@mui/icons-material";
-import { Post } from '../../../models/post/PostModel';
-import CommentsSection from "../comments/CommentsSection";  // Ensure the correct path
+import { PostWithCommentsCount } from '../../../models/post/PostModel'; // Adjust the import
+import CommentsSection from "../comments/CommentsSection";
 import { handleVote } from './handleVote';
 
 interface PostsProps {
@@ -14,7 +14,7 @@ interface PostsProps {
 }
 
 const Posts: React.FC<PostsProps> = ({ currentFilter }) => {
-    const [posts, setPosts] = useState<Post[]>([]);
+    const [posts, setPosts] = useState<PostWithCommentsCount[]>([]);
     const userId = 'YOUR_USER_ID';  // This should be dynamically set based on logged-in user info
 
     useEffect(() => {
@@ -22,14 +22,16 @@ const Posts: React.FC<PostsProps> = ({ currentFilter }) => {
             const data = await fetchPosts();
             const postsWithVotes = await Promise.all(data.map(async post => {
                 const votesCount = await fetchPostVotes(post._id);
+                const commentsCount = await fetchCommentsCount(post._id);
                 return {
                     ...post,
                     upvotes: votesCount,
                     upvoted: false,
                     downvoted: false,
                     _comments: [],
-                    showComments: false
-                };
+                    showComments: false,
+                    commentsCount,
+                } as PostWithCommentsCount;
             }));
             setPosts(postsWithVotes);
         };
@@ -47,13 +49,13 @@ const Posts: React.FC<PostsProps> = ({ currentFilter }) => {
 };
 
 interface PostItemProps {
-    post: Post;
-    setPosts: React.Dispatch<React.SetStateAction<Post[]>>;
+    post: PostWithCommentsCount;
+    setPosts: React.Dispatch<React.SetStateAction<PostWithCommentsCount[]>>;
     userId: string;
 }
 
 const PostItem: React.FC<PostItemProps> = ({ post, setPosts, userId }) => {
-    const [localPost, setLocalPost] = useState<Post>(post);
+    const [localPost, setLocalPost] = useState<PostWithCommentsCount>(post);
 
     const handleLocalVote = async (type: 'upvote' | 'downvote') => {
         await handleVote(localPost, setLocalPost, type);
@@ -72,7 +74,7 @@ const PostItem: React.FC<PostItemProps> = ({ post, setPosts, userId }) => {
     const handleAddComment = async (newCommentText: string) => {
         if (!newCommentText.trim()) return;
         try {
-            const newComment = await postComment(newCommentText, localPost._id, userId);
+            const newComment = await postComment({ text: newCommentText, postId: localPost._id, userId }); // Update the postComment call
             setLocalPost(prevPost => ({
                 ...prevPost,
                 _comments: [...prevPost._comments, newComment],

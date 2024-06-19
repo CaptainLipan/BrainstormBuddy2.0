@@ -1,9 +1,9 @@
 import { toggleVote } from '../../../api/api';
-import { Post } from '../../../models/post/PostModel';
+import { PostWithCommentsCount } from '../../../models/post/PostModel';
 
 export const handleVote = async (
-    post: Post,
-    setPost: React.Dispatch<React.SetStateAction<Post>>,
+    post: PostWithCommentsCount,
+    setPost: React.Dispatch<React.SetStateAction<PostWithCommentsCount>>,
     type: 'upvote' | 'downvote',
 ): Promise<void> => {
     const userString = localStorage.getItem('user');

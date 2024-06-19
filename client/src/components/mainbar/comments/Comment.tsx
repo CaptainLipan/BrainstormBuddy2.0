@@ -1,19 +1,17 @@
-// Comment.tsx
 import React from 'react';
-import { IComment } from '../../../models/comment/CommentModel';
-import './Comment.css'
+import { CommentData } from '../../../models/comment/CommentModel';
+import './Comment.css';
+
 interface CommentProps {
-    comment: IComment;
+    comment: CommentData;
 }
 
 const Comment: React.FC<CommentProps> = ({ comment }) => {
     return (
         <div className="comment">
-            <p className="comment-text">{comment.text}</p>
-            <div className="comment-footer">
-                <span className="comment-username">{comment._creator.username}</span>
-                <span className="comment-time">{new Date(comment.createdAt).toLocaleString()}</span>
-            </div>
+            <div className="comment-author">{comment._creator.username}</div>
+            <div className="comment-text">{comment.text}</div>
+            <div className="comment-time">{new Date(comment.createdAt).toLocaleString()}</div>
         </div>
     );
 };

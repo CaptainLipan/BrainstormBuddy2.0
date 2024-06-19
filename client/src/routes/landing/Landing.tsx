@@ -1,3 +1,4 @@
+// src/routes/landing/Landing.tsx
 import React, { useState } from 'react';
 import './Landing.css';
 import Navbar from "../../components/navbar/Navbar";
