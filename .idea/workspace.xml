@@ -6,6 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="10de905c-3790-4a3b-bc3d-7c01bc6cfec0" name="Changes" comment="coments are done almost">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/controllers/commentController.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/controllers/commentController.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/controllers/postController.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/controllers/postController.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/controllers/voteController.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/controllers/voteController.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/models/Comment.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/models/Comment.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/models/Post.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/models/Post.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/routes.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,7 +149,7 @@
       <workItem from="1715952717720" duration="1377000" />
       <workItem from="1715954577687" duration="3616000" />
       <workItem from="1718196554916" duration="484000" />
-      <workItem from="1718197276861" duration="37917000" />
+      <workItem from="1718197276861" duration="50729000" />
     </task>
     <task id="LOCAL-00001" summary="git init&#10;git add README.md&#10;git commit -m &quot;first commit&quot;&#10;git branch -M main&#10;git remote add origin https://github.com/CaptainLipan/BrainstormBuddy-2.0.git&#10;git push -u origin main">
       <option name="closed" value="true" />

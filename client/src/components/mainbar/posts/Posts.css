@@ -4,18 +4,18 @@
     width: 100%;
     max-width: 800px;
     grid-template-columns: 1fr 17fr;
-    grid-template-rows: 1fr auto auto 1fr; /* Added one extra row for comments */
+    grid-template-rows: 1fr auto auto 1fr;
     grid-template-areas:
         "post-sidebar post-title"
         "post-sidebar post-body"
-        "post-sidebar comments-area" /* New area for comments */
+        "post-sidebar comments-area"
         "post-sidebar post-footer";
     margin: 10px auto;
     box-shadow: 0 4px 8px rgba(0,0,0,0.15);
     border-radius: 8px;
     overflow: hidden;
-    background-color: white; /* Ensuring background is white */
-    color: black; /* Default text color set to black */
+    background-color: white;
+    color: black; /* Ensuring text is black for readability */
 }
 
 /* Styling for the sidebar, including flex layout for vertical alignment */

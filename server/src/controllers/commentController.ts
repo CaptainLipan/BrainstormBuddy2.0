@@ -56,6 +56,32 @@ const commentController = {
                 message: err.message || 'Error retrieving comments'
             });
         }
+    },
+
+    deleteComment: async (req: Request, res: Response): Promise<void> => {
+        const { commentId } = req.params;
+
+        try {
+            const comment = await Comment.findByIdAndUpdate(commentId, { isDeleted: true }, { new: true });
+
+            if (!comment) {
+                res.status(404).json({
+                    success: false,
+                    message: 'Comment not found'
+                });
+                return;
+            }
+
+            res.status(200).json({
+                success: true,
+                message: 'Comment deleted successfully'
+            });
+        } catch (err: any) {
+            res.status(500).json({
+                success: false,
+                message: err.message || 'Error deleting comment'
+            });
+        }
     }
 };
 

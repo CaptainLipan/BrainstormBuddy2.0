@@ -1,4 +1,3 @@
-// src/models/Post.ts
 import mongoose, { Schema, Document } from 'mongoose';
 
 export interface IPost extends Document {
@@ -9,7 +8,8 @@ export interface IPost extends Document {
     createdAt: Date;
     updatedAt: Date;
     _comments: mongoose.Schema.Types.ObjectId[];
-    commentsCount?: number; // Add this line
+    commentsCount?: number;
+    isDeleted: boolean; // Add this line
 }
 
 const PostSchema: Schema = new Schema({
@@ -17,7 +17,8 @@ const PostSchema: Schema = new Schema({
     text: { type: String, required: true },
     link: { type: String, optional: true },
     _creator: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
-    _comments: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Comment' }]
+    _comments: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Comment' }],
+    isDeleted: { type: Boolean, default: false } // Add this line
 }, {
     timestamps: true
 });

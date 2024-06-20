@@ -1,13 +1,13 @@
 // src/components/mainbar/posts/Posts.tsx
 import React, { useState, useEffect } from 'react';
-import { fetchPosts, fetchPostVotes, postComment, getCommentsForPost, fetchPostById, fetchCommentsCount } from '../../../api/api';
+import { fetchPosts, fetchPostVotes, postComment, getCommentsForPost, fetchPostById, fetchCommentsCount, deletePost } from '../../../api/api';
 import { CreateCommentInput, CommentData } from '../../../models/comment/CommentModel';
 import { PostWithCommentsCount } from '../../../models/post/PostModel';
 import './Posts.css';
 import ThumbUpOffAltIcon from '@mui/icons-material/ThumbUpOffAlt';
 import ThumbDownOffAltIcon from '@mui/icons-material/ThumbDownOffAlt';
 import Button from '../../button/Button';
-import { ModeComment, Share } from "@mui/icons-material";
+import { ModeComment, Share, Delete } from "@mui/icons-material";
 import CommentsSection from "../comments/CommentsSection";
 import { handleVote } from './handleVote';
 
@@ -58,10 +58,19 @@ const Posts: React.FC<PostsProps> = ({ currentFilter }) => {
         }
     };
 
+    const handleDeletePost = async (postId: string) => {
+        try {
+            await deletePost(postId);
+            setPosts(prevPosts => prevPosts.filter(p => p._id !== postId));
+        } catch (error) {
+            console.error('Error deleting post:', error);
+        }
+    };
+
     return (
         <div className="posts-wrapper">
             {posts.map(post => (
-                <PostItem key={post._id} post={post} setPosts={setPosts} userId={userId} refreshPost={refreshPost} />
+                <PostItem key={post._id} post={post} setPosts={setPosts} userId={userId} refreshPost={refreshPost} handleDeletePost={handleDeletePost} />
             ))}
         </div>
     );
@@ -72,9 +81,10 @@ interface PostItemProps {
     setPosts: React.Dispatch<React.SetStateAction<PostWithCommentsCount[]>>;
     userId: string;
     refreshPost: (postId: string) => void;
+    handleDeletePost: (postId: string) => void;
 }
 
-const PostItem: React.FC<PostItemProps> = ({ post, setPosts, userId, refreshPost }) => {
+const PostItem: React.FC<PostItemProps> = ({ post, setPosts, userId, refreshPost, handleDeletePost }) => {
     const [localPost, setLocalPost] = useState<PostWithCommentsCount>(post);
 
     const handleLocalVote = async (type: 'upvote' | 'downvote') => {
@@ -116,6 +126,11 @@ const PostItem: React.FC<PostItemProps> = ({ post, setPosts, userId, refreshPost
         setPosts(prevPosts => prevPosts.map(p => p._id === localPost._id ? { ...p, commentsCount: p.commentsCount + 1 } : p));
     };
 
+    const decrementCommentCount = () => {
+        setLocalPost(prevPost => ({ ...prevPost, commentsCount: prevPost.commentsCount - 1 }));
+        setPosts(prevPosts => prevPosts.map(p => p._id === localPost._id ? { ...p, commentsCount: p.commentsCount - 1 } : p));
+    };
+
     return (
         <div className="post">
             <div className="post-sidebar">
@@ -128,6 +143,7 @@ const PostItem: React.FC<PostItemProps> = ({ post, setPosts, userId, refreshPost
                     className={`downvote ${localPost.downvoted ? 'active' : ''}`}
                     onClick={() => handleLocalVote('downvote')}
                 />
+                <Delete className="delete-button" onClick={() => handleDeletePost(localPost._id)} />
             </div>
             <div className="post-title">
                 <span>Posted by {localPost._creator.username}</span>
@@ -136,8 +152,15 @@ const PostItem: React.FC<PostItemProps> = ({ post, setPosts, userId, refreshPost
                 <Button label="+ Follow" className="follow-button" />
             </div>
             <div className="post-body">{localPost.text}</div>
-            <div className="comments-area">
-                {localPost.showComments && <CommentsSection postId={localPost._id} onCommentAdded={() => refreshPost(localPost._id)} incrementCommentCount={incrementCommentCount} />}
+            <div className="comments-area comments-wrapper">
+                {localPost.showComments && (
+                    <CommentsSection
+                        postId={localPost._id}
+                        onCommentAdded={() => refreshPost(localPost._id)}
+                        incrementCommentCount={incrementCommentCount}
+                        decrementCommentCount={decrementCommentCount}
+                    />
+                )}
             </div>
             <div className="post-footer">
                 <ModeComment onClick={handleCommentIconClick} />

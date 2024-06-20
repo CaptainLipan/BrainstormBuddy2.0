@@ -96,3 +96,13 @@ export const undoVotePost = async (payload: VotePayload): Promise<VoteResponse> 
     const response = await api.post<VoteResponse>('/post/undovote', payload);
     return response.data;
 };
+
+// Function to delete a post
+export const deletePost = async (postId: string): Promise<void> => {
+    await api.delete(`/post/${postId}`);
+};
+
+// Function to delete a comment
+export const deleteComment = async (commentId: string): Promise<void> => {
+    await api.delete(`/comment/${commentId}`);
+};

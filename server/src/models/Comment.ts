@@ -18,12 +18,12 @@ const commentSchema = new Schema<IComment>({
 
 // Pre-find hook to populate _creator and _post
 commentSchema.pre('find', function (next) {
-    this.populate('_creator', 'username');
+    this.where({ isDeleted: false }).populate('_creator', 'username');
     next();
 });
 
 commentSchema.pre('findOne', function (next) {
-    this.populate('_creator', 'username');
+    this.where({ isDeleted: false }).populate('_creator', 'username');
     next();
 });
 

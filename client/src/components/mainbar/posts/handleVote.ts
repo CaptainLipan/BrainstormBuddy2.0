@@ -1,3 +1,4 @@
+// src/components/mainbar/posts/handleVote.ts
 import { toggleVote } from '../../../api/api';
 import { PostWithCommentsCount } from '../../../models/post/PostModel';
 

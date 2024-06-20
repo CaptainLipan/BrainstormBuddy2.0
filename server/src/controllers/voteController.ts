@@ -1,6 +1,8 @@
+// src/controllers/voteController.ts
 import { Request, Response } from 'express';
 import Vote from "../models/Vote";  // Ensure this path is correct
 import Post from "../models/Post";  // Ensure this path is correct
+import Comment from "../models/Comment";  // Ensure this path is correct
 
 type VoteType = 'upvote' | 'downvote';  // Define the type for clarity and reuse
 

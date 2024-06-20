@@ -37,7 +37,7 @@ const postController = {
 
     getAll: async (req: Request, res: Response): Promise<void> => {
         try {
-            const posts = await Post.find({}).populate({
+            const posts = await Post.find({ isDeleted: false }).populate({
                 path: '_creator',
                 select: 'username createdAt -_id'
             }).populate({
@@ -84,6 +84,33 @@ const postController = {
             res.status(500).json({
                 success: false,
                 message: 'Error fetching post',
+                error: err.message
+            });
+        }
+    },
+
+    deletePost: async (req: Request, res: Response): Promise<void> => {
+        const { postId } = req.params;
+
+        try {
+            const post = await Post.findByIdAndUpdate(postId, { isDeleted: true }, { new: true });
+
+            if (!post) {
+                res.status(404).json({
+                    success: false,
+                    message: 'Post not found'
+                });
+                return;
+            }
+
+            res.status(200).json({
+                success: true,
+                message: 'Post deleted successfully'
+            });
+        } catch (err: any) {
+            res.status(500).json({
+                success: false,
+                message: 'Error deleting post',
                 error: err.message
             });
         }

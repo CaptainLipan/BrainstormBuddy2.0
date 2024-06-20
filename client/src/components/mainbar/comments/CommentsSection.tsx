@@ -8,10 +8,11 @@ import './Comment.css';
 interface CommentsSectionProps {
     postId: string;
     onCommentAdded: () => void;
-    incrementCommentCount: () => void; // Add this prop
+    incrementCommentCount: () => void;
+    decrementCommentCount: () => void;
 }
 
-const CommentsSection: React.FC<CommentsSectionProps> = ({ postId, onCommentAdded, incrementCommentCount }) => {
+const CommentsSection: React.FC<CommentsSectionProps> = ({ postId, onCommentAdded, incrementCommentCount, decrementCommentCount }) => {
     const [comments, setComments] = useState<CommentData[]>([]);
     const [newComment, setNewComment] = useState('');
     const [isLoading, setIsLoading] = useState(false);
@@ -28,7 +29,6 @@ const CommentsSection: React.FC<CommentsSectionProps> = ({ postId, onCommentAdde
                 setComments(fetchedComments);
             } catch (error) {
                 console.error('Failed to load comments', error);
-
             } finally {
                 setIsLoading(false);
             }
@@ -60,14 +60,19 @@ const CommentsSection: React.FC<CommentsSectionProps> = ({ postId, onCommentAdde
             const comment = await postComment(commentData);
             setComments([...comments, comment]);
             setNewComment('');
-            incrementCommentCount(); // Increment the comment count locally
-            onCommentAdded(); // Call the onCommentAdded prop
+            incrementCommentCount();
+            onCommentAdded();
         } catch (error) {
             console.error('Failed to post comment:', error);
             setError(`Failed to create comment: ${error instanceof Error ? error.message : String(error)}`);
         } finally {
             setIsLoading(false);
         }
+    };
+
+    const handleDeleteComment = (commentId: string) => {
+        setComments(prevComments => prevComments.filter(comment => comment._id !== commentId));
+        decrementCommentCount();
     };
 
     return (
@@ -88,7 +93,7 @@ const CommentsSection: React.FC<CommentsSectionProps> = ({ postId, onCommentAdde
                 <div className="loading-message">Loading comments...</div>
             ) : (
                 comments.map((comment) => (
-                    <Comment key={comment._id} comment={comment} />
+                    <Comment key={comment._id} comment={comment} onDeleteComment={handleDeleteComment} />
                 ))
             )}
         </div>

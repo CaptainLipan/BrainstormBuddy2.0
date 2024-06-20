@@ -10,8 +10,12 @@ export interface CommentData {
     text: string;
     postId: string;
     userId: string;
-    createdAt: string;  // Assuming the date comes in as a string to convert later
+    createdAt: string;
     _creator: {
         username: string;
     };
+    upvotes: number;
+    downvotes: number;
+    upvoted: boolean;
+    downvoted: boolean;
 }
