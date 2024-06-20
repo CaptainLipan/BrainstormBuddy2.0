@@ -4,19 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="10de905c-3790-4a3b-bc3d-7c01bc6cfec0" name="Changes" comment="vote+ comments almost">
+    <list default="true" id="10de905c-3790-4a3b-bc3d-7c01bc6cfec0" name="Changes" comment="coments are done almost">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/controllers/commentController.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/controllers/commentController.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/controllers/commentCountController.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/controllers/commentCountController.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/controllers/postController.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/controllers/postController.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/controllers/voteController.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/controllers/voteController.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/controllers/voteCountController.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/controllers/voteCountController.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/models/Comment.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/models/Comment.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/models/Post.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/models/Post.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/models/Vote.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/models/Vote.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/models/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/models/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/routes.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,7 +143,7 @@
       <workItem from="1715952717720" duration="1377000" />
       <workItem from="1715954577687" duration="3616000" />
       <workItem from="1718196554916" duration="484000" />
-      <workItem from="1718197276861" duration="29594000" />
+      <workItem from="1718197276861" duration="36598000" />
     </task>
     <task id="LOCAL-00001" summary="git init&#10;git add README.md&#10;git commit -m &quot;first commit&quot;&#10;git branch -M main&#10;git remote add origin https://github.com/CaptainLipan/BrainstormBuddy-2.0.git&#10;git push -u origin main">
       <option name="closed" value="true" />
@@ -196,7 +185,23 @@
       <option name="project" value="LOCAL" />
       <updated>1714957226559</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="vote+ comments almost doen">
+      <option name="closed" value="true" />
+      <created>1718811148857</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1718811148857</updated>
+    </task>
+    <task id="LOCAL-00007" summary="coments are done almost">
+      <option name="closed" value="true" />
+      <created>1718880079829</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1718880079829</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -207,7 +212,9 @@
     <MESSAGE value="Post adjustments" />
     <MESSAGE value="sever adding" />
     <MESSAGE value="vote+ comments almost" />
-    <option name="LAST_COMMIT_MESSAGE" value="vote+ comments almost" />
+    <MESSAGE value="vote+ comments almost doen" />
+    <MESSAGE value="coments are done almost" />
+    <option name="LAST_COMMIT_MESSAGE" value="coments are done almost" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

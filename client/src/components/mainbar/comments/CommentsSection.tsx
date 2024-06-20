@@ -6,14 +6,14 @@ import './Comment.css';
 
 interface CommentsSectionProps {
     postId: string;
+    onCommentAdded: () => void;
 }
 
-const CommentsSection: React.FC<CommentsSectionProps> = ({ postId }) => {
+const CommentsSection: React.FC<CommentsSectionProps> = ({ postId, onCommentAdded }) => {
     const [comments, setComments] = useState<CommentData[]>([]);
     const [newComment, setNewComment] = useState('');
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
-    const testUserId = "66380f8f7af302d62f105e55";
 
     useEffect(() => {
         const fetchComments = async () => {
@@ -39,8 +39,8 @@ const CommentsSection: React.FC<CommentsSectionProps> = ({ postId }) => {
         if (!newComment.trim()) return;
 
         const userInfo = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')!) : null;
-        if (!userInfo || userInfo._id !== testUserId) {
-            setError('You are not authorized to post.');
+        if (!userInfo) {
+            setError('You need to be logged in to post comments.');
             return;
         }
 
@@ -57,6 +57,7 @@ const CommentsSection: React.FC<CommentsSectionProps> = ({ postId }) => {
             const comment = await postComment(commentData);
             setComments([...comments, comment]);
             setNewComment('');
+            onCommentAdded(); // Call the onCommentAdded prop
         } catch (error) {
             console.error('Failed to post comment:', error);
             setError(`Failed to create comment: ${error instanceof Error ? error.message : String(error)}`);
