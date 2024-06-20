@@ -1,3 +1,4 @@
+// src/components/mainbar/comments/CommentsSection.tsx
 import React, { useState, useEffect } from 'react';
 import { getCommentsForPost, postComment } from '../../../api/api';
 import { CommentData, CreateCommentInput } from '../../../models/comment/CommentModel';
@@ -7,13 +8,15 @@ import './Comment.css';
 interface CommentsSectionProps {
     postId: string;
     onCommentAdded: () => void;
+    incrementCommentCount: () => void; // Add this prop
 }
 
-const CommentsSection: React.FC<CommentsSectionProps> = ({ postId, onCommentAdded }) => {
+const CommentsSection: React.FC<CommentsSectionProps> = ({ postId, onCommentAdded, incrementCommentCount }) => {
     const [comments, setComments] = useState<CommentData[]>([]);
     const [newComment, setNewComment] = useState('');
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
+    const testUserId = "66380f8f7af302d62f105e55";
 
     useEffect(() => {
         const fetchComments = async () => {
@@ -25,7 +28,7 @@ const CommentsSection: React.FC<CommentsSectionProps> = ({ postId, onCommentAdde
                 setComments(fetchedComments);
             } catch (error) {
                 console.error('Failed to load comments', error);
-                setError('Failed to fetch comments. Please try again later.');
+
             } finally {
                 setIsLoading(false);
             }
@@ -39,8 +42,8 @@ const CommentsSection: React.FC<CommentsSectionProps> = ({ postId, onCommentAdde
         if (!newComment.trim()) return;
 
         const userInfo = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')!) : null;
-        if (!userInfo) {
-            setError('You need to be logged in to post comments.');
+        if (!userInfo || userInfo._id !== testUserId) {
+            setError('You are not authorized to post.');
             return;
         }
 
@@ -57,6 +60,7 @@ const CommentsSection: React.FC<CommentsSectionProps> = ({ postId, onCommentAdde
             const comment = await postComment(commentData);
             setComments([...comments, comment]);
             setNewComment('');
+            incrementCommentCount(); // Increment the comment count locally
             onCommentAdded(); // Call the onCommentAdded prop
         } catch (error) {
             console.error('Failed to post comment:', error);

@@ -1,3 +1,4 @@
+// src/components/mainbar/posts/Posts.tsx
 import React, { useState, useEffect } from 'react';
 import { fetchPosts, fetchPostVotes, postComment, getCommentsForPost, fetchPostById, fetchCommentsCount } from '../../../api/api';
 import { CreateCommentInput, CommentData } from '../../../models/comment/CommentModel';
@@ -110,6 +111,11 @@ const PostItem: React.FC<PostItemProps> = ({ post, setPosts, userId, refreshPost
         }
     };
 
+    const incrementCommentCount = () => {
+        setLocalPost(prevPost => ({ ...prevPost, commentsCount: prevPost.commentsCount + 1 }));
+        setPosts(prevPosts => prevPosts.map(p => p._id === localPost._id ? { ...p, commentsCount: p.commentsCount + 1 } : p));
+    };
+
     return (
         <div className="post">
             <div className="post-sidebar">
@@ -131,7 +137,7 @@ const PostItem: React.FC<PostItemProps> = ({ post, setPosts, userId, refreshPost
             </div>
             <div className="post-body">{localPost.text}</div>
             <div className="comments-area">
-                {localPost.showComments && <CommentsSection postId={localPost._id} onCommentAdded={() => refreshPost(localPost._id)} />}
+                {localPost.showComments && <CommentsSection postId={localPost._id} onCommentAdded={() => refreshPost(localPost._id)} incrementCommentCount={incrementCommentCount} />}
             </div>
             <div className="post-footer">
                 <ModeComment onClick={handleCommentIconClick} />
