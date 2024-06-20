@@ -1,4 +1,4 @@
-import express, { Request, Response } from 'express';
+import express from 'express';
 import postController from './controllers/postController';
 import basicController from './controllers/basicController';
 import { createUser } from './controllers/userController';
@@ -18,6 +18,7 @@ router.post('/users', createUser);
 // Post routes
 router.post('/post', postController.post);
 router.get('/posts', postController.getAll);
+router.get('/post/:postId', postController.getById);
 
 // Comment routes
 router.post('/comment', commentController.post);
@@ -27,7 +28,7 @@ router.get('/post/:postId/comments', commentController.getCommentsForPost);
 router.get('/post/:postId/comments/count', commentCountController.getCount);
 
 // Unified voting routes
-router.post('/vote/toggle/:type/:id/:voteType', voteController.toggleVote); // type can be 'post' or 'comment', id is postId or commentId, voteType is 'upvote' or 'downvote'
+router.post('/vote/toggle/:type/:id/:voteType', voteController.toggleVote);
 
 // Route to get vote count for a post
 router.get('/post/:postId/votes', voteCountController.countPostVotes);

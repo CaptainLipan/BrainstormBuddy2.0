@@ -1,11 +1,8 @@
-    import { Request, Response } from 'express';
-    import Comment from '../models/Comment';
+import { Request, Response } from 'express';
+import Comment from '../models/Comment';
 
-
-    const commentCountController: any = {};
-
-    // Function to get the comment count for a specific post
-    commentCountController.getCount = async (req: Request, res: Response): Promise<void> => {
+const commentCountController = {
+    getCount: async (req: Request, res: Response): Promise<void> => {
         const { postId } = req.params;
 
         try {
@@ -21,6 +18,7 @@
                 error: error.message
             });
         }
-    };
+    }
+};
 
-    export default commentCountController;
+export default commentCountController;

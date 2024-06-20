@@ -1,4 +1,3 @@
-// src/controllers/userController.ts
 import { Request, Response } from 'express';
 import db from '../models';  // Ensure this path correctly references your models
 
@@ -24,4 +23,5 @@ export const createUser = (req: Request, res: Response) => {
             });
         });
 };
+
 export default { createUser };

@@ -1,14 +1,9 @@
 import { Request, Response } from 'express';
-import Post, { IPost } from '../models/Post';  // Ensure your model exports IPost if needed, otherwise adjust
+import Post, { IPost } from '../models/Post';
+import Comment from '../models/Comment';
 
-// Define a more specific type for the controller
-interface IPostController {
-    post: (req: Request, res: Response) => Promise<Response>;
-    getAll: (req: Request, res: Response) => Promise<Response>;
-}
-
-const postController: IPostController = {
-    post: async (req: Request, res: Response): Promise<Response> => {
+const postController = {
+    post: async (req: Request, res: Response): Promise<void> => {
         const { title, text, link, userId } = req.body;
 
         const post = new Post({
@@ -20,26 +15,27 @@ const postController: IPostController = {
 
         try {
             const newPost = await post.save();
-            return res.status(201).json({
+            res.status(201).json({
                 success: true,
                 data: newPost
             });
         } catch (err: any) {
             if (err.name === 'ValidationError') {
-                return res.status(400).json({
+                res.status(400).json({
                     success: false,
                     message: 'Validation Error',
                     errors: err.errors
                 });
+            } else {
+                res.status(500).json({
+                    success: false,
+                    message: err.message || 'Internal Server Error'
+                });
             }
-            return res.status(500).json({
-                success: false,
-                message: err.message || 'Internal Server Error'
-            });
         }
     },
 
-    getAll: async (req: Request, res: Response): Promise<Response> => {
+    getAll: async (req: Request, res: Response): Promise<void> => {
         try {
             const posts = await Post.find({}).populate({
                 path: '_creator',
@@ -47,17 +43,48 @@ const postController: IPostController = {
             }).populate({
                 path: '_comments',
                 select: 'text createdAt _creator',
-                match: { 'isDeleted': false }
+                match: { isDeleted: false }
             });
 
-            return res.status(200).json({
+            res.status(200).json({
                 success: true,
                 data: posts
             });
         } catch (err: any) {
-            return res.status(500).json({
+            res.status(500).json({
                 success: false,
                 message: err.message || 'Internal Server Error'
+            });
+        }
+    },
+
+    getById: async (req: Request, res: Response): Promise<void> => {
+        const { postId } = req.params;
+
+        try {
+            const post = await Post.findById(postId)
+                .populate('_creator', 'username')
+                .lean() as IPost;
+
+            if (!post) {
+                res.status(404).json({
+                    success: false,
+                    message: 'Post not found'
+                });
+                return;
+            }
+
+            post.commentsCount = await Comment.countDocuments({ _post: post._id, isDeleted: false });
+
+            res.status(200).json({
+                success: true,
+                data: post
+            });
+        } catch (err: any) {
+            res.status(500).json({
+                success: false,
+                message: 'Error fetching post',
+                error: err.message
             });
         }
     }

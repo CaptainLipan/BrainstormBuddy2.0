@@ -1,54 +1,44 @@
-// Assuming the Comment and Post models are imported with their interfaces
-import db from '../models/index';
-
-
 import { Request, Response } from 'express';
+import Comment from '../models/Comment';
+import Post from '../models/Post';
 
-const commentController: any = {};
+const commentController = {
+    post: async (req: Request, res: Response): Promise<void> => {
+        const { text, postId, userId } = req.body;
 
-commentController.post = (req: Request, res: Response): void => {
-    const {
-        text,
-        postId,
-        userId
-    } = req.body;
+        const comment = new Comment({
+            text,
+            _creator: userId,
+            _post: postId,
+        });
 
-    // Validation should be handled here if necessary
+        try {
+            const newComment = await comment.save();
+            const populatedComment = await Comment.findById(newComment._id).populate('_creator', 'username');
 
-    const comment = new db.Comment({
-        text,
-        _creator: userId,
-        _post: postId,
-    });
+            await Post.findByIdAndUpdate(
+                postId,
+                { $push: { _comments: newComment._id } },
+                { new: true }
+            );
 
-    comment.save().then((newComment) => {
-        db.Post.findByIdAndUpdate(
-            postId,
-            { $push: { _comments: newComment._id } },
-            { new: true } // Return the modified document rather than the original
-        ).then((existingPost) => {
             res.status(200).json({
                 success: true,
-                data: newComment,
-                postUpdated: existingPost,
+                data: populatedComment
             });
-        }).catch((err: any) => {
+        } catch (err: any) {
             res.status(500).json({
-                message: err.message || 'Error updating post with new comment',
+                message: err.message || 'Error saving comment',
             });
-        });
-    }).catch((err: any) => {
-        res.status(500).json({
-            message: err.message || 'Error saving comment',
-        });
-    });
-};
-commentController.getCommentsForPost = (req: Request, res: Response): void => {
-    const postId = req.params.postId;  // Get the postId from URL parameters
+        }
+    },
 
-    db.Comment.find({ _post: postId, isDeleted: false })  // Query for comments related to the postId and not deleted
-        .populate('_creator', 'username')  // Optionally populate the creator details
-        .then(comments => {
+    getCommentsForPost: async (req: Request, res: Response): Promise<void> => {
+        const postId = req.params.postId;
+
+        try {
+            const comments = await Comment.find({ _post: postId, isDeleted: false }).populate('_creator', 'username');
+
             if (comments.length) {
                 res.status(200).json({
                     success: true,
@@ -60,13 +50,13 @@ commentController.getCommentsForPost = (req: Request, res: Response): void => {
                     message: 'No comments found for this post'
                 });
             }
-        })
-        .catch(err => {
+        } catch (err: any) {
             res.status(500).json({
                 success: false,
                 message: err.message || 'Error retrieving comments'
             });
-        });
+        }
+    }
 };
 
 export default commentController;

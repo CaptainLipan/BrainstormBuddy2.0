@@ -4,8 +4,8 @@ export interface IComment extends Document {
     text: string;
     isDeleted: boolean;
     createdAt: Date;
-    _creator: mongoose.Schema.Types.ObjectId;  // Reference to User document
-    _post: mongoose.Schema.Types.ObjectId;     // Reference to Post document
+    _creator: mongoose.Schema.Types.ObjectId;
+    _post: mongoose.Schema.Types.ObjectId;
 }
 
 const commentSchema = new Schema<IComment>({
@@ -17,9 +17,13 @@ const commentSchema = new Schema<IComment>({
 });
 
 // Pre-find hook to populate _creator and _post
-commentSchema.pre('find', function(next) {
-    this.populate('_creator', 'username createdAt -_id')
-        .populate('_post', 'title createdAt -_id');
+commentSchema.pre('find', function (next) {
+    this.populate('_creator', 'username');
+    next();
+});
+
+commentSchema.pre('findOne', function (next) {
+    this.populate('_creator', 'username');
     next();
 });
 
