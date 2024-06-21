@@ -1,4 +1,3 @@
-// src/components/mainbar/posts/Posts.tsx
 import React, { useState, useEffect } from 'react';
 import { fetchPosts, fetchPostVotes, postComment, getCommentsForPost, fetchPostById, fetchCommentsCount, deletePost } from '../../../api/api';
 import { CreateCommentInput, CommentData } from '../../../models/comment/CommentModel';
@@ -86,6 +85,7 @@ interface PostItemProps {
 
 const PostItem: React.FC<PostItemProps> = ({ post, setPosts, userId, refreshPost, handleDeletePost }) => {
     const [localPost, setLocalPost] = useState<PostWithCommentsCount>(post);
+    const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
 
     const handleLocalVote = async (type: 'upvote' | 'downvote') => {
         await handleVote(localPost, setLocalPost, type);
@@ -131,6 +131,11 @@ const PostItem: React.FC<PostItemProps> = ({ post, setPosts, userId, refreshPost
         setPosts(prevPosts => prevPosts.map(p => p._id === localPost._id ? { ...p, commentsCount: p.commentsCount - 1 } : p));
     };
 
+    const confirmDeletePost = () => {
+        handleDeletePost(localPost._id);
+        setShowDeleteConfirm(false);
+    };
+
     return (
         <div className="post">
             <div className="post-sidebar">
@@ -143,7 +148,7 @@ const PostItem: React.FC<PostItemProps> = ({ post, setPosts, userId, refreshPost
                     className={`downvote ${localPost.downvoted ? 'active' : ''}`}
                     onClick={() => handleLocalVote('downvote')}
                 />
-                <Delete className="delete-button" onClick={() => handleDeletePost(localPost._id)} />
+                <Delete className="delete-button" onClick={() => setShowDeleteConfirm(true)} />
             </div>
             <div className="post-title">
                 <span>Posted by {localPost._creator.username}</span>
@@ -168,6 +173,15 @@ const PostItem: React.FC<PostItemProps> = ({ post, setPosts, userId, refreshPost
                 <Share />
                 <span>Share</span>
             </div>
+            {showDeleteConfirm && (
+                <div className="delete-confirm-modal">
+                    <div className="delete-confirm-content">
+                        <p>Are you sure you want to delete this post?</p>
+                        <button onClick={confirmDeletePost}>Yes</button>
+                        <button onClick={() => setShowDeleteConfirm(false)}>No</button>
+                    </div>
+                </div>
+            )}
         </div>
     );
 };

@@ -59,6 +59,7 @@
     grid-area: post-title;
     display: flex;
     align-items: center;
+    justify-content: space-between; /* Ensure spacing for title and delete button */
     padding: 10px;
     color: black; /* Ensuring text is black for readability */
 }
@@ -89,11 +90,22 @@
     background-color: black;
 }
 
-/*button styling*/
+/* Button styling */
 .posts-wrapper .post .post-title .follow-button {
     padding: 5px 10px;
     border: 1px solid black;
     border-radius: 5px;
+}
+
+/* Styling for the delete button */
+.posts-wrapper .post .delete-button {
+    cursor: pointer;
+    color: black; /* Ensuring text is black for readability */
+    margin-left: 10px;
+}
+
+.posts-wrapper .post .delete-button:hover {
+    color: red;
 }
 
 /* Styling for the body of the post */
@@ -161,4 +173,28 @@
         max-width: 90%;
         grid-template-columns: 1fr 3fr;
     }
+}
+/* Add this to your Posts.css */
+.delete-confirm-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.delete-confirm-content {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.delete-confirm-content button {
+    margin: 0 10px;
 }

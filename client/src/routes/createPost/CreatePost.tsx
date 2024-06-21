@@ -1,4 +1,3 @@
-//src/routes/createPost/CreatePost.tsx:
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Navbar from "../../components/navbar/Navbar";
@@ -8,7 +7,6 @@ import './CreatePost.css';
 const CreatePost: React.FC = () => {
     const [title, setTitle] = useState('');
     const [text, setText] = useState('');
-    const [link, setLink] = useState('');
     const [error, setError] = useState('');
     const navigate = useNavigate();
 
@@ -24,7 +22,20 @@ const CreatePost: React.FC = () => {
         } else {
             setError('You must be logged in to post.');
         }
-    }, []);
+
+        const handleBeforeUnload = (e: BeforeUnloadEvent) => {
+            if (title || text) {
+                e.preventDefault();
+                e.returnValue = 'You have unsaved changes. Are you sure you want to leave?';
+            }
+        };
+
+        window.addEventListener('beforeunload', handleBeforeUnload);
+
+        return () => {
+            window.removeEventListener('beforeunload', handleBeforeUnload);
+        };
+    }, [title, text]);
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -35,13 +46,13 @@ const CreatePost: React.FC = () => {
             return;
         }
 
-        if (!title || !text || !link) {
-            setError('All fields are required');
+        if (!title) {
+            setError('Title is required');
             return;
         }
 
         try {
-            const postData = { title, text, link, userId: userInfo._id };
+            const postData = { title, text, userId: userInfo._id };
             const response = await createPostApi(postData);
             console.log('Post created:', response);
             navigate('/');
@@ -52,6 +63,12 @@ const CreatePost: React.FC = () => {
     };
 
     const handleCancel = () => {
+        if (title || text) {
+            const confirmLeave = window.confirm('You have unsaved changes. Are you sure you want to leave?');
+            if (!confirmLeave) {
+                return;
+            }
+        }
         navigate('/');
     };
 
@@ -66,10 +83,6 @@ const CreatePost: React.FC = () => {
                 <label>
                     Text:
                     <textarea value={text} onChange={(e) => setText(e.target.value)} />
-                </label>
-                <label>
-                    Link:
-                    <input type="text" value={link} onChange={(e) => setLink(e.target.value)} />
                 </label>
                 {error && <p className="error">{error}</p>}
                 <div className="create-post-button-container">
