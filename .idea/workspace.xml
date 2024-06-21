@@ -6,11 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="10de905c-3790-4a3b-bc3d-7c01bc6cfec0" name="Changes" comment="coments are done almost">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/controllers/commentController.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/controllers/commentController.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/controllers/postController.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/controllers/postController.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/controllers/voteController.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/controllers/voteController.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/models/Comment.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/models/Comment.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/models/Post.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/models/Post.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/routes.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -110,7 +105,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/Users/honzik/WebstormProjects/BrainstormBuddy2.0/client/node_modules/typescript/lib&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/honzik/WebstormProjects/BrainstormBuddy3.0/server/node_modules/typescript/lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -150,6 +145,8 @@
       <workItem from="1715954577687" duration="3616000" />
       <workItem from="1718196554916" duration="484000" />
       <workItem from="1718197276861" duration="50729000" />
+      <workItem from="1718913325207" duration="53000" />
+      <workItem from="1718913578423" duration="16545000" />
     </task>
     <task id="LOCAL-00001" summary="git init&#10;git add README.md&#10;git commit -m &quot;first commit&quot;&#10;git branch -M main&#10;git remote add origin https://github.com/CaptainLipan/BrainstormBuddy-2.0.git&#10;git push -u origin main">
       <option name="closed" value="true" />
@@ -234,6 +231,11 @@
           <url>file://$PROJECT_DIR$/client/src/components/navbar/actions/Actions.tsx</url>
           <line>40</line>
           <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/client/src/components/mainbar/posts/Posts.tsx</url>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

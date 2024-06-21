@@ -11,12 +11,12 @@ const router = express.Router();
 router.post('/post', postController.post);
 router.get('/posts', postController.getAll);
 router.get('/post/:postId', postController.getById);
-router.delete('/post/:postId', postController.deletePost); // Add this line
+router.delete('/post/:postId', postController.deletePost);
 
 // Comment routes
 router.post('/comment', commentController.post);
 router.get('/post/:postId/comments', commentController.getCommentsForPost);
-router.delete('/comment/:commentId', commentController.deleteComment); // Add this line
+router.delete('/comment/:commentId', commentController.deleteComment);
 
 // Voting routes
 router.post('/vote/toggle/:type/:id/:voteType', voteController.toggleVote);
